@@ -1,0 +1,103 @@
+/* src/components/FoodCard.css */
+
+.food-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .food-card img {
+    max-width: 100%;
+    max-height: 150px; /* Set a maximum height for images */
+    object-fit: cover; /* Ensure images fit within the specified height */
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  
+  .food-card h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .food-card p {
+    margin: 0.5rem 0;
+    color: #666;
+  }
+  
+  .toppings {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  .topping-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .topping-option input {
+    margin-right: 0.5rem;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .quantity-controls .round-button {
+    background-color: #151515;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .quantity-controls .round-button:hover {
+    background-color: #e65c50;
+  }
+  
+  .quantity-controls span {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .food-card p.total-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .add-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
