@@ -1,0 +1,94 @@
+/* src/components/AddBurger.css */
+.add-burger-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .add-burger-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  .form-group input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  .upload-preview {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .upload-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  
+  .toppings-list {
+    margin-top: 15px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .toppings-list li {
+    background-color: #f1f1f1;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .toppings-header {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  

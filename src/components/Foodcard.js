@@ -1,23 +1,30 @@
-// src/components/FoodCard.js
+import axios from 'axios';
 import React, { useState } from 'react';
 import './Foodcard.css';
 
-function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
+function FoodCard({ name, description, price, imageUrl, bgColor, toppings, category }) {
   const [quantity, setQuantity] = useState(0);
   const [selectedToppings, setSelectedToppings] = useState([]);
   const [showToppings, setShowToppings] = useState(false);
 
+  // Handle adding the item
   const handleAdd = () => {
-    setShowToppings(true);
+    if (quantity === 0) setShowToppings(true);
     setQuantity(quantity + 1);
   };
 
+  // Handle removing the item
   const handleRemove = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity(quantity - 1);
+    } else {
+      setQuantity(0);
+      setShowToppings(false); // Hide toppings when quantity is 0
+      setSelectedToppings([]); // Reset toppings
     }
   };
 
+  // Handle topping selection
   const handleToppingChange = (topping, isChecked) => {
     if (isChecked) {
       setSelectedToppings([...selectedToppings, topping]);
@@ -26,7 +33,33 @@ function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
     }
   };
 
-  const totalPrice = price * quantity + selectedToppings.reduce((total, topping) => total + topping.price * quantity, 0);
+  // Calculate total price
+  const totalToppingsPrice = selectedToppings.reduce((total, topping) => total + topping.price, 0);
+  const totalPrice = quantity > 0 ? (price * quantity) + totalToppingsPrice : 0;
+
+  // Add to cart API call
+  const handleAddToCart = async () => {
+    const cartItem = {
+      name,
+      imageUrl,
+      category, // important
+      price,
+      quantity,
+      toppings: selectedToppings,
+      totalPrice
+    };
+
+    try {
+      await axios.post('http://localhost:3001/api/cart', cartItem);
+      alert("✅ Item added to cart!");
+      setQuantity(0);
+      setSelectedToppings([]);
+      setShowToppings(false);
+    } catch (error) {
+      console.error("❌ Failed to add to cart", error);
+      alert("Failed to add item to cart");
+    }
+  };
 
   return (
     <div className="food-card" style={{ backgroundColor: bgColor }}>
@@ -34,6 +67,7 @@ function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
       <h2>{name}</h2>
       <p>{description}</p>
       <p>Price: {price} LKR</p>
+
       {showToppings && toppings && toppings.length > 0 && (
         <div className="toppings">
           <h3>Select Toppings:</h3>
@@ -42,6 +76,7 @@ function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
               <input
                 type="checkbox"
                 id={`topping-${index}`}
+                checked={selectedToppings.some(t => t.name === topping.name)}
                 onChange={(e) => handleToppingChange(topping, e.target.checked)}
               />
               <label htmlFor={`topping-${index}`}>
@@ -51,6 +86,7 @@ function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
           ))}
         </div>
       )}
+
       <div className="quantity-controls">
         {showToppings ? (
           <>
@@ -62,10 +98,19 @@ function FoodCard({ name, description, price, imageUrl, bgColor, toppings }) {
           <button className="add-button" onClick={handleAdd}>Add</button>
         )}
       </div>
-      <p>Total: {totalPrice} LKR</p>
+
+      {quantity > 0 && (
+        <>
+          <p>Total: {totalPrice} LKR</p>
+          <button className="add-to-cart-button" onClick={handleAddToCart}>
+            Add to Cart
+          </button>
+        </>
+      )}
     </div>
   );
 }
 
 export default FoodCard;
+
 

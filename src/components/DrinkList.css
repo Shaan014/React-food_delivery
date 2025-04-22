@@ -1,0 +1,41 @@
+.drinks-list-container {
+    padding: 2rem;
+  }
+  
+  .drinks-list {
+    list-style: none;
+    padding: 20;
+  }
+  
+  .drinks-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #acadac5a;
+    border-radius: 8px;
+  }
+  
+  .drinks-item .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  

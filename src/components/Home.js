@@ -8,7 +8,7 @@ function Home() {
     <div className="home">
       <header className="hero-section">
         <div className="hero-content">
-          <h1>Delicious Food Delivered to You</h1>
+          <h1 className="title">Delicious Food Delivered to You</h1>
           <p>
             Choose from a wide variety of delicious meals and have them
             delivered straight to your door.
@@ -29,7 +29,7 @@ function Home() {
           </div>
           <div className="category-card burger">
             <Link to="/burger">
-              <img src="/images/beef burger.jpg" alt="Burger" />
+              <img src="/images/burger0012.avif" alt="Burger" />
               <h3>Burger</h3>
             </Link>
           </div>
@@ -41,10 +41,23 @@ function Home() {
           </div>
           <div className="category-card drinks">
             <Link to="/drinks">
-              <img src="/images/sprite.jpg" alt="Drinks" />
+              <img src="/images/pepsiii.jpg" alt="Drinks" />
               <h3>Drinks</h3>
             </Link>
           </div>
+          <div className="category-card noodles">
+            <Link to="/noodles">
+              <img src="/images/chow mein.jpg" alt="Noodles" />
+              <h3>Noodles</h3>
+            </Link>
+          </div>
+          <div className="category-card drinks">
+            <Link to="/drinks">
+              <img src="/images/Fresh Juice.jpg" alt="Drinks" />
+              <h3>Cool Drinks</h3>
+            </Link>
+          </div>
+         
         </div>
       </section>
       <section className="featured-items">

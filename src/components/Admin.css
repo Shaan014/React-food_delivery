@@ -1,0 +1,76 @@
+/* Admin Dashboard Container */
+.admin-dashboard-container {
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+    min-height: 100vh;
+  }
+  
+  /* Page Title */
+  .admin-dashboard-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 0 10px;
+  }
+  
+  /* Individual Card */
+  .card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    border-color: #00bcd4;
+  }
+  
+  /* Card Title */
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00796b;
+    font-weight: 600;
+  }
+  
+  /* Card Links */
+  .card a {
+    display: inline-block;
+    background-color: #00bcd4;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 8px 5px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card a:hover {
+    background-color: #008ba3;
+  }
+  
+  /* Optional Paragraph Inside Card */
+  .card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 12px;
+  }
+  
+  
